@@ -70,7 +70,8 @@ return [
 	'create_food_types' => 	"CREATE TABLE `food_types` (
 							`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 							`type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-							PRIMARY KEY (`id`)
+							PRIMARY KEY (`id`),
+							UNIQUE KEY `food_types_type_unique` (`type`)
 						)",	
 
 		// Create menu
