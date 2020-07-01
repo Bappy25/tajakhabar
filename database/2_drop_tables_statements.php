@@ -2,16 +2,36 @@
 
 return [
 
-		// Reverse items table.
+		// Reverse gallery table.
 
-	'drop_items' => 	"DROP TABLE IF EXISTS `items`",
+	'drop_gallery' => 	"DROP TABLE IF EXISTS `gallery`",
 
-		// Reverse users table.
+		// Reverse news table.
+
+	'drop_news' => 	"DROP TABLE IF EXISTS `news`",
+
+		// Reverse menu table.
+
+	'drop_menu' => 	"DROP TABLE IF EXISTS `menu`",
+
+		// Reverse reset password links table.
 
 	'drop_reset_password_links' => 	"DROP TABLE IF EXISTS `reset_password_links`", 
 
 		// Reverse users table.
 
 	'drop_users' => 	"DROP TABLE IF EXISTS `users`", 	
+
+		// Reverse visitors table.
+
+	'drop_visitors' => 	"DROP TABLE IF EXISTS `visitors`", 
+
+		// Reverse subscribers table.
+
+	'drop_subscribers' => 	"DROP TABLE IF EXISTS `subscribers`", 
+
+		// Reverse web contents table.
+
+	'drop_web_contents' => 	"DROP TABLE IF EXISTS `web_contents`", 
 
 ];
