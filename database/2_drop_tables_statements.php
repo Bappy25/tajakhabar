@@ -14,6 +14,10 @@ return [
 
 	'drop_menu' => 	"DROP TABLE IF EXISTS `menu`",
 
+		// Reverse food types table.
+
+	'drop_food_types' => 	"DROP TABLE IF EXISTS `food_types`",
+
 		// Reverse reset password links table.
 
 	'drop_reset_password_links' => 	"DROP TABLE IF EXISTS `reset_password_links`", 

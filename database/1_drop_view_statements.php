@@ -13,8 +13,4 @@ return [
 		// Reverse news view.
 
 	'drop_news_view' => 	"DROP VIEW IF EXISTS `news_view`",
-
-		// Reverse gallery view.
-
-	'drop_gallery_view' => 	"DROP VIEW IF EXISTS `gallery_view`",
 ];
