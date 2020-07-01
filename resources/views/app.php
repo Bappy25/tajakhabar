@@ -10,16 +10,21 @@
   <meta name="author" content="Mahadi Hasan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title><?php startblock('title') ?><?php endblock() ?></title>
+
   <!-- Favicon-->
   <?php echo icon('img/favicon.png'); ?>
 
-  <title><?php startblock('title') ?><?php endblock() ?></title>
-
-  <!-- Bootstrap CSS-->
-  <?php echo style('plugins/bootstrap/css/bootstrap.min.css'); ?>
-
-  <!-- Iconic CSS-->
-  <?php echo style('plugins/iconic/css/open-iconic-bootstrap.css'); ?>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <?php echo style('css/bootstrap.min.css'); ?>
+  <!-- Material Design Bootstrap -->
+  <?php echo style('css/mdb.min.css'); ?>
+  <!-- Your custom styles (optional) -->
+  <?php echo style('css/style.css'); ?>
 
 </head>
 <!-- #ENDS# Header -->
@@ -86,11 +91,14 @@
         </div>
       </div>
 
-      <!-- Jquery -->
-      <?php echo script('plugins/jquery/jquery.min.js'); ?>
-
+      <!-- jQuery -->
+      <?php echo script('js/jquery.min.js'); ?>
+      <!-- Bootstrap tooltips -->
+      <?php echo script('js/popper.min.js'); ?>
       <!-- Bootstrap core JavaScript -->
-      <?php echo script('plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>
+      <?php echo script('js/bootstrap.min.js'); ?>
+      <!-- MDB core JavaScript -->
+      <?php echo script('js/mdb.min.js'); ?>
 
     </body>
 
