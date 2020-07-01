@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "codecube/base",
-            "version": "v1.5",
+            "version": "v1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bappy25/base.git",
-                "reference": "a412e03d51ea72d45f4d64b7328e0bfb69f4fc92"
+                "reference": "82969dd4b7398e03e9018c8cb44b525d384c5748"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bappy25/base/zipball/a412e03d51ea72d45f4d64b7328e0bfb69f4fc92",
-                "reference": "a412e03d51ea72d45f4d64b7328e0bfb69f4fc92",
+                "url": "https://api.github.com/repos/Bappy25/base/zipball/82969dd4b7398e03e9018c8cb44b525d384c5748",
+                "reference": "82969dd4b7398e03e9018c8cb44b525d384c5748",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "codecube",
                 "php"
             ],
-            "time": "2020-05-26T09:42:17+00:00"
+            "time": "2020-06-08T12:55:44+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
