@@ -8,7 +8,7 @@ return [
 
 		// Create news view
 
-	'create_news_view' => 	"CREATE VIEW `news_view` AS SELECT n.id AS id, n.title AS title, n.tags AS tags, n.details AS details, n.user_id AS user_id, u.username AS username, u.name AS name, u.image_path AS image_path, n.created_at AS created_at, n.updated_at AS updated_at, n.deleted_at AS deleted_at FROM news n, users u WHERE n.user_id = u.id",
+	'create_news_view' => 	"CREATE VIEW `news_view` AS SELECT n.id AS id, n.title AS title, n.tags AS tags, n.details AS details, n.broadcast AS broadcast, n.expiration AS expiration, n.user_id AS user_id, u.username AS username, u.name AS name, n.created_at AS created_at, n.updated_at AS updated_at, n.deleted_at AS deleted_at FROM news n, users u WHERE n.user_id = u.id",
 
 		// Create gallery view
 
