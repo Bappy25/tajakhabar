@@ -1,4 +1,4 @@
-<?php inherits('app'); ?>
+<?php inherits('admin.app'); ?>
 
 <?php startblock('title') ?>
 
@@ -14,7 +14,7 @@
   </div>
   <div class="card-body">
 
-      <form method="POST" action="<?php echo route('items/store'); ?>"> 
+      <form method="POST" action="<?php echo route('admin/items/store'); ?>"> 
 
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
@@ -43,7 +43,7 @@
         <button type="submit" class="btn btn-primary mr-5">Submit</button>
       </form>
 
-      <a href="<?php echo route('items/all') ?>" class="btn btn-primary btn-sm my-3"><span class="oi oi-arrow-left pr-2"></span>Go Back</a>
+      <a href="<?php echo route('admin/items/all') ?>" class="btn btn-primary btn-sm my-3"><span class="oi oi-arrow-left pr-2"></span>Go Back</a>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-<?php inherits('app'); ?>
+<?php inherits('admin.app'); ?>
 
 <?php startblock('title') ?>
 
@@ -12,7 +12,7 @@
     Register
   </div>
   <div class="card-body">
-    <form class="form-signin" action="<?php echo route('register'); ?>" method="POST">
+    <form class="form-signin" action="<?php echo route('admin/register'); ?>" method="POST">
 
       <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 

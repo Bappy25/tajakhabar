@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function home() 
     {
         $this->guard('CheckAuth');
-        return $this->view('home');
+        return $this->view('admin.home');
     }
 
     public function testApi() 

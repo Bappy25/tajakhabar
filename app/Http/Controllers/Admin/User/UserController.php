@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User; 
+namespace App\Http\Controllers\Admin\User; 
 
 use Base\Request; 
 use App\Models\User\Auth; 
@@ -24,21 +24,21 @@ class UserController extends Controller
     { 
         $auth_user = $this->auth->getAuth(); 
         $user = $this->user->setData((array) $auth_user)->getUser();
-        return $this->view('user.show', compact('user'));
+        return $this->view('admin.user.show', compact('user'));
     }
 
     public function edit() 
     {
         $auth_user = $this->auth->getAuth(); 
         $user = $this->user->setData((array) $auth_user)->getUser();
-        return $this->view('user.edit', compact('user'));
+        return $this->view('admin.user.edit', compact('user'));
     }
 
     public function editPassword() 
     { 
         $auth_user = $this->auth->getAuth(); 
         $user = $this->user->setData((array) $auth_user)->getUser();
-        return $this->view('user.edit_pass', compact('user'));
+        return $this->view('admin.user.edit_pass', compact('user'));
     }
 
     public function update() 
@@ -46,7 +46,7 @@ class UserController extends Controller
         $update = $this->user->setData($_POST)->validateData()->updateUser();
         if($update){
             $this->request->setFlash(['success' => "User has beed updated!"]);
-            $this->redirect('user/show');
+            $this->redirect('admin/user/show');
         }
         else{
             $this->redirect(back());
@@ -64,7 +64,7 @@ class UserController extends Controller
         }
         if($update){
             $this->request->setFlash(['success' => "Password has beed updated!"]);
-            $this->redirect('user/show');
+            $this->redirect('admin/user/show');
         }
         else{
             $this->request->setFlash(['danger' => "Password could not be updated! Please try again!"]);

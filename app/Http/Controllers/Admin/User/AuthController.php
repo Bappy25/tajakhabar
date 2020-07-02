@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User; 
+namespace App\Http\Controllers\Admin\User;
 
 use Base\Request;
 use App\Models\User\Auth; 
@@ -25,7 +25,7 @@ class AuthController extends Controller
         $number1 = rand(10,100); $number2 = rand(10,100); $total = $number1 + $number2;
         $captcha = ['number1' => $number1, 'number2' => $number2, 'total' => $total]; 
         $this->request->put('captcha', $captcha);   
-        return $this->view('auth.login');
+        return $this->view('admin.auth.login');
     }
 
     public function checkCaptcha() 
@@ -33,7 +33,7 @@ class AuthController extends Controller
         if($_POST['check'] == $this->request->show('captcha')['total']){
           $this->auth->signout();
         }
-        $this->redirect('signin');
+        $this->redirect('admin/signin');
     }
 
     public function login() 
@@ -42,17 +42,17 @@ class AuthController extends Controller
         $this->auth->setPassword(isset($_POST['password']) ? $_POST['password'] : '');
         $signin = $this->auth->signin();
         if($signin){
-            $this->redirect('home');
+            $this->redirect('admin/home');
         }
         else{
-          $this->redirect('signin');
+          $this->redirect('admin/signin');
         }
     }
 
     public function signup() 
     {
         $this->guard('CheckGuest');  
-        return $this->view('auth.register');
+        return $this->view('admin.auth.register');
     }
 
     public function register() 
@@ -60,7 +60,7 @@ class AuthController extends Controller
         $store = $this->user->setData($_POST)->validateData()->storeUser();
         if($store){
             $this->request->setFlash(['success' => "You have now been registered!"]);
-            $this->redirect('signin');
+            $this->redirect('admin/signin');
         }
         $this->redirect(back());
     }
@@ -68,7 +68,7 @@ class AuthController extends Controller
     public function forgotPassword() 
     {
         $this->guard('CheckGuest'); 
-        return $this->view('auth.forgot_pass');
+        return $this->view('admin.auth.forgot_pass');
     }
 
     public function sendResetInfo() 
@@ -84,11 +84,11 @@ class AuthController extends Controller
             $this->auth->storeLink();
             $subject = 'Link For Password Reset!';
             $body = 'Please click the below link to reset your password-';
-            $body .= '<br><a href="'.route("password/reset", ["token" => $token]).'" target="_blank">Link to reset password!</a>';
+            $body .= '<br><a href="'.route("admin/password/reset", ["token" => $token]).'" target="_blank">Link to reset password!</a>';
             $this->sendMail([$user['email']], $subject, $body);
         }
         $this->request->setFlash(['success' => "Pleace check your mail! You will get an email if your given credential is found in our database!"]);
-        $this->redirect('password/forgot');
+        $this->redirect('admin/password/forgot');
     }
 
     public function resetPassword() 
@@ -97,11 +97,11 @@ class AuthController extends Controller
         $this->auth->setToken($_GET['token']);
         $link = $this->auth->getLink(); 
         if($link['validity'] == 1 && ((strtotime($link['created_at'])+ 60*60) > time())){
-            return $this->view('auth.reset_pass', compact('link'));
+            return $this->view('admin.auth.reset_pass', compact('link'));
         }
         else{
             $this->request->setFlash(['danger' => "This link is expired!"]);
-            $this->redirect('password/forgot');
+            $this->redirect('admin/password/forgot');
         }
     }
 
@@ -113,7 +113,7 @@ class AuthController extends Controller
             $this->auth->setToken($_POST['token']);
             $this->auth->updateValidity();
             $this->request->setFlash(['success' => "Your password has been updated!"]);
-            $this->redirect('signin');
+            $this->redirect('admin/signin');
         }
         $this->redirect(back());
     }
@@ -121,7 +121,7 @@ class AuthController extends Controller
     public function signout() 
     {
         $this->auth->signout();
-        $this->redirect('signin');
+        $this->redirect('admin/signin');
     }
 
 }
