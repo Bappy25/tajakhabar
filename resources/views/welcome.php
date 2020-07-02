@@ -29,9 +29,6 @@
   <!-- Navigation -->
   <?php append('layouts.partials.navigation'); ?>
 
-  <!-- Page Content -->
-  <?php startblock('content') ?><?php endblock() ?>
-
   <!-- Footer -->
   <?php append('layouts.partials.footer'); ?>
 

@@ -19,6 +19,7 @@
 
 	<!-- Custom Style -->
 	<?php echo style('css/style.css'); ?>
+	<?php startblock('custom-styles') ?><?php endblock() ?>
 	
 
 </head>
