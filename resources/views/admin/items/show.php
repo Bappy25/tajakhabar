@@ -1,4 +1,4 @@
-<?php inherits('admin.app'); ?>
+<?php inherits('admin.layouts.app'); ?>
 
 <?php startblock('title') ?>
 
@@ -13,19 +13,8 @@
     <?php echo $item['name'] ?>
   </div>
   <div class="card-body">
-    <?php 
-    $alerts = Base\Request::getFlash();
-    if(!empty((array) $alerts)){
-      foreach($alerts as $key=>$value){
-        ?>
-        <div class="alert alert-<?php echo $key; ?> alert-dismissible"> 
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <?php echo $value; ?>
-        </div>
-        <?php                            
-      }
-    } 
-    ?>
+    <!-- Alerts -->
+    <?php append('admin.layouts.alerts'); ?> 
     <p><strong>Item Name:</strong> <?php echo $item['name']; ?></p>
     <p><strong>Item Price:</strong> <?php echo $item['price']; ?>/=</p>
     <form method="post" action="<?php echo route('admin/items/delete') ?>" onsubmit="return confirm('Do you really want to delete this item?');">

@@ -1,67 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bd">
+<head>
 
-  <!-- Header -->
-  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <?php startblock('meta_tags') ?><?php endblock() ?>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="CodeCube Framework">
-    <meta name="keywords" content="PHP,HTML,CSS,XML,JavaScript">
-    <meta name="author" content="Mahadi Hasan">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon-->
+  <?php echo icon('img/favicon.png'); ?>
 
-    <!-- Favicon-->
-    <?php echo icon('img/favicon.png'); ?>
+  <title><?php startblock('title') ?><?php endblock() ?></title>
 
-    <title><?php echo 'Welcome || '.title(); ?></title>
-    
-    <!-- CSS-->
-    <?php echo style('plugins/bootstrap/css/bootstrap.min.css'); ?>
+  <!-- Styles -->
+  <?php append('layouts.partials.styles'); ?> 
 
-    <style>
-      body {
-          background-color: #f2f2f2;
-      }
-      a:link {
-          text-decoration: none;
-      }
-      .brand {  
-        position:absolute;
-        bottom:0px;
-        right:25%;
-        left:50%;
-      }
-      .framework_icon{
-        height: 60px;
-      }
-    </style>
+  <!-- Extra Styles -->
+  <?php startblock('extra-styles') ?><?php endblock() ?>
 
-  </head>
-  <!-- #ENDS# Header -->
+  <!-- Custom Style -->
+  <?php echo style('css/style.css'); ?>
+  
 
-  <body>
-    
-    <div class="text-center">
-      <h1 class="my-5 text-secondary">
-        <?php echo image('resources/assets/img/logo.png', 'framework_icon', ['class'=>'framework_icon pr-3']); ?>CodeCube
-      </h1>
-      <p class="my-5">
-        <a href="http://mhasan.amrameghnabasi.org/codecube-framework/" class="mx-5">Documentation</a>
-        <a href="/signin" class="mx-5">Demo App</a>
-        <a href="/database_migration" class="mx-5">Migration</a>
-        <a href="http://mhasan.amrameghnabasi.org" class="mx-5">About Developer</a>
-      </p> 
-    </div> 
+</head>
+<!-- #ENDS# Header -->
 
-    <p class="small brand">
-      <a href="https://www.codecubeit.com/" class="text-muted">CodeCube IT Solutions</a> 
-    </p> 
+<body>
 
-    <!-- Bootstrap tooltips -->
-    <?php echo script('plugins/bootstrap/js/popper.min.js'); ?>
-    <!-- Bootstrap core JavaScript -->
-    <?php echo script('plugins/bootstrap/js/bootstrap.min.js'); ?>
+  <!-- Navigation -->
+  <?php append('layouts.partials.navigation'); ?>
 
-  </body>
+  <!-- Page Content -->
+  <?php startblock('content') ?><?php endblock() ?>
+
+  <!-- Footer -->
+  <?php append('layouts.partials.footer'); ?>
+
+  <!-- Scripts -->
+  <?php append('layouts.partials.scripts'); ?>
+
+  <!-- Extra Scripts -->
+  <?php startblock('extra-scripts') ?><?php endblock() ?>
+
+  <!-- Custom Script -->
+  <?php startblock('custom-script') ?><?php endblock() ?>
+
+</body>
 
 </html>

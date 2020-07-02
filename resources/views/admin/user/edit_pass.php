@@ -1,4 +1,4 @@
-<?php inherits('admin.app'); ?>
+<?php inherits('admin.layouts.app'); ?>
 
 <?php startblock('title') ?>
 
@@ -13,18 +13,9 @@
     Edit Password
   </div>
   <div class="card-body">
-    <?php 
-    $alerts = Base\Request::getFlash();
-    if(!empty((array) $alerts)){
-      foreach($alerts as $key=>$value){
-        ?>
-        <div class="alert alert-<?php echo $key; ?>"> 
-          <?php echo $value; ?>
-        </div>
-        <?php                            
-      }
-    } 
-    ?>
+
+    <!-- Alerts -->
+    <?php append('admin.layouts.alerts'); ?> 
 
     <form method="POST" action="<?php echo route('admin/user/update/password'); ?>"> 
 
